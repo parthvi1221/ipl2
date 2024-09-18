@@ -1,4 +1,4 @@
-/* General body styling */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
@@ -7,7 +7,7 @@ body {
     padding: 20px;
   }
   
-  /* Main container */
+
   div {
     max-width: 1000px;
     margin: 0 auto;
@@ -17,7 +17,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Header styling */
+  
   h1 {
     text-align: center;
     color: #2c3e50;
@@ -25,7 +25,7 @@ body {
     margin-bottom: 20px;
   }
   
-  /* Form styling - Flexbox for horizontal alignment */
+  
   form {
     display: flex;
     flex-wrap: wrap;
@@ -42,7 +42,7 @@ body {
     background-color: #f9f9f9;
     transition: border-color 0.3s;
     flex: 1;
-    min-width: 150px; /* To ensure smaller text boxes on narrower screens */
+    min-width: 150px;
   }
   
   input[type="text"]:focus, select:focus {
@@ -84,7 +84,7 @@ body {
     background-color: #c0392b;
   }
   
-  /* Player List styling */
+  
   ul {
     list-style-type: none;
     padding: 0;
@@ -113,8 +113,7 @@ body {
   li button:hover {
     background-color: #2980b9;
   }
-  
-  /* Filter styling */
+
   div > div {
     display: flex;
     gap: 15px;
