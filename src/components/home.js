@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
 
-
-// PlayerForm Component (for creating/editing players)
 const PlayerForm = ({ onSubmit, existingPlayer, isEditing, cancelEdit }) => {
   const [name, setName] = useState(existingPlayer?.name || '');
   const [role, setRole] = useState(existingPlayer?.role || 'Batsman');
@@ -23,7 +21,7 @@ const PlayerForm = ({ onSubmit, existingPlayer, isEditing, cancelEdit }) => {
         onChange={(e) => setName(e.target.value)}
         placeholder="Player Name"
         required
-        disabled={isEditing}  // Disable name editing when updating an existing player
+        disabled={isEditing}
       />
       
       <select value={role} onChange={(e) => setRole(e.target.value)}>
@@ -57,7 +55,6 @@ const PlayerForm = ({ onSubmit, existingPlayer, isEditing, cancelEdit }) => {
   );
 };
 
-// PlayerList Component (to display players)
 const PlayerList = ({ players, onEdit }) => {
   return (
     <ul>
@@ -71,7 +68,6 @@ const PlayerList = ({ players, onEdit }) => {
   );
 };
 
-// Filter Component
 const PlayerFilter = ({ onFilter }) => {
   const [role, setRole] = useState('');
   const [team, setTeam] = useState('');
@@ -109,14 +105,12 @@ const PlayerFilter = ({ onFilter }) => {
   );
 };
 
-// Main App Component
 const Ipl = () => {
   const [players, setPlayers] = useState([]);
   const [filteredPlayers, setFilteredPlayers] = useState([]);
   const [editingPlayer, setEditingPlayer] = useState(null);
 
   const addOrUpdatePlayer = (player, isEditing) => {
-    // Check if team already has a captain and vice-captain
     const teamPlayers = players.filter((p) => p.team === player.team && p.name !== player.name);
     const hasCaptain = teamPlayers.some((p) => p.isCaptain);
     const hasViceCaptain = teamPlayers.some((p) => p.isViceCaptain);
@@ -136,7 +130,7 @@ const Ipl = () => {
     } else {
       setPlayers([...players, player]);
     }
-    setEditingPlayer(null); // Reset after editing
+    setEditingPlayer(null);
   };
 
   const filterPlayers = (filterCriteria) => {
