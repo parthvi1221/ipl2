@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import './style.css';
+
 
 // PlayerForm Component (for creating/editing players)
 const PlayerForm = ({ onSubmit, existingPlayer, isEditing, cancelEdit }) => {
